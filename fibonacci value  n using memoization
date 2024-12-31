@@ -1,0 +1,31 @@
+import java.util.*;
+import java.io.*;
+
+public class main{
+     
+    public static void main(String[] args){
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        int[] qb = new int[n+1];
+        fibonacci(n,qb);
+        System.out.println(fibonacci(n,qb));
+        
+        
+    } 
+ public static int fibonacci(int n,int[] qb){
+     if(n == 0|| n == 1){
+         return n;
+     }
+     
+     if(qb[n] != 0 ){
+         return qb[n];
+     }
+     int nm1 = fibonacci(n-1,qb);
+     int nm2 = fibonacci(n-2,qb);
+     int fib = nm1 + nm2;
+     qb[n] = fib;
+     return fib;
+     
+ }         
+      
+}
